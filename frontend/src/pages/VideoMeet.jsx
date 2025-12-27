@@ -13,6 +13,11 @@ import StopScreenShareIcon from '@mui/icons-material/StopScreenShare'
 import ChatIcon from '@mui/icons-material/Chat'
 import server from '../environment';
 
+
+
+
+
+
 const server_url = server;
 
 var connections = {};
@@ -69,6 +74,12 @@ export default function VideoMeetComponent() {
     //     getPermissions();
     // })
     //alt
+    const chatEndRef = useRef(null);
+    useEffect(() => {
+  chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+}, [messages]);
+
+
     useEffect(() => {
     console.log("HELLO")
     getPermissions();
@@ -513,8 +524,7 @@ export default function VideoMeetComponent() {
                                         </div>
                                     )
                                 }) : <p>No Messages Yet</p>}
-
-
+                                <div ref={chatEndRef} />
                             </div>
 
                             <div className={styles.chattingArea}>
