@@ -1,12 +1,12 @@
-/* Page wrapper */
+
 .historyPage {
   min-height: 100vh;
   background: linear-gradient(135deg, #020617, #020617);
-  padding: 40px;
+  padding: 41px;
   
 }
 
-/* Header */
+
 .historyHeader {
   
   align-items: center;
@@ -28,7 +28,7 @@
 }
 
 
-/* Card grid */
+
 .historyList {
   display:block;
   
@@ -36,7 +36,7 @@
   
 }
 
-/* Card styling */
+
 .historyCard {
   background: #202437!important;
   border: 1px solid #334155 !important;
@@ -51,14 +51,14 @@
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
 }
 
-/* Card text */
+
 .historyText {
   color: #e5e7eb !important;
   font-size: 20px !important;
   margin-bottom: 8px !important;
 }
 
-/* Empty state */
+
 .noHistory {
   color: #94a3b8;
   font-size: 16px;
