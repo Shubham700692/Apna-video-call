@@ -5,7 +5,7 @@ import "../App.css";
 import { Button, IconButton, TextField } from '@mui/material';
 import RestoreIcon from '@mui/icons-material/Restore';
 import { AuthContext } from '../contexts/AuthContext';
-
+import styles from '../styles/Home.Module.css';
 function HomeComponent() {
 
 
@@ -58,7 +58,13 @@ function HomeComponent() {
 
                         <div style={{ display: 'flex', gap: "10px" }}>
 
-                            <TextField onChange={e => setMeetingCode(e.target.value)} id="outlined-basic" label="Meeting Code" variant="outlined" />
+                            <TextField 
+                            onChange={e => setMeetingCode(e.target.value)} 
+                            id="outlined-basic" 
+                            label="Meeting Code" 
+                            variant="outlined" 
+                            sx={inputStyle}
+/>
                             <Button onClick={handleJoinVideoCall} variant='contained'>Join</Button>
 
                         </div>
@@ -74,3 +80,16 @@ function HomeComponent() {
 
 
 export default withAuth(HomeComponent)
+
+const inputStyle = {
+  backgroundColor: "#1e293b",
+  borderRadius: "8px",
+  input: { color: "white" },
+  label: { color: "#cbd5f5" },
+  "& .MuiOutlinedInput-notchedOutline": {
+    borderColor: "#475569",
+  },
+  "&:hover .MuiOutlinedInput-notchedOutline": {
+    borderColor: "#38bdf8",
+  },
+};

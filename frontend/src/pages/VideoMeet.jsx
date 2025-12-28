@@ -490,12 +490,18 @@ export default function VideoMeetComponent() {
 
             {askForUsername === true ?
 
-                <div>
+                <div className={styles.lobby}>
 
 
                     <h2>Enter into Lobby </h2>
-                    <TextField id="outlined-basic" label="Username" value={username} onChange={e => setUsername(e.target.value)} variant="outlined" />
-                    <Button variant="contained" onClick={connect}>Connect</Button>
+                    <TextField id="outlined-basic-filled" 
+                    label="Username" 
+                    value={username} 
+                    onChange={e => setUsername(e.target.value)} 
+                    variant="outlined" 
+                     sx={inputStyle}
+                     ></TextField>
+                    <Button variant="contained" onClick={connect} >Connect</Button>
 
 
                     <div>
@@ -528,7 +534,7 @@ export default function VideoMeetComponent() {
                             </div>
 
                             <div className={styles.chattingArea}>
-                                <TextField value={message} onChange={(e) => setMessage(e.target.value)} id="outlined-basic" label="Enter Your chat" variant="outlined" />
+                                <TextField value={message} onChange={(e) => setMessage(e.target.value)} id="outlined-basic" label="Enter Your chat" variant="outlined" sx={inputStyle}/>
                                 <Button variant='contained' onClick={sendMessage}>Send</Button>
                             </div>
 
@@ -590,3 +596,15 @@ export default function VideoMeetComponent() {
         </div>
     )
 }
+const inputStyle = {
+  backgroundColor: "#1e293b",
+  borderRadius: "8px",
+  input: { color: "white" },
+  label: { color: "#cbd5f5" },
+  "& .MuiOutlinedInput-notchedOutline": {
+    borderColor: "#475569",
+  },
+  "&:hover .MuiOutlinedInput-notchedOutline": {
+    borderColor: "#38bdf8",
+  },
+};

@@ -1,0 +1,67 @@
+/* Page wrapper */
+.historyPage {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #020617, #020617);
+  padding: 40px;
+  
+}
+
+/* Header */
+.historyHeader {
+  
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+  color:#e5e7eb;
+  position:relative;
+}
+
+.historyHeader h2 {
+  font-size: 20px;
+  font-weight: 600;
+  
+}
+
+.historyHomeBtn {
+  color: white !important;
+  background-color: #1e293b !important;
+}
+
+
+/* Card grid */
+.historyList {
+  display:block;
+  
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  
+}
+
+/* Card styling */
+.historyCard {
+  background: #202437!important;
+  border: 1px solid #334155 !important;
+  border-radius: 14px !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 15px;
+  width:30vw;
+}
+
+.historyCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Card text */
+.historyText {
+  color: #e5e7eb !important;
+  font-size: 20px !important;
+  margin-bottom: 8px !important;
+}
+
+/* Empty state */
+.noHistory {
+  color: #94a3b8;
+  font-size: 16px;
+  margin-top: 40px;
+  text-align: center;
+}

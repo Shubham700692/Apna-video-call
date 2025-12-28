@@ -2,7 +2,7 @@
 .meetVideoContainer {
     position: relative;
     height: 100vh;
-    background: rgb(1, 4, 48);
+    background: #020617;
     overflow-x: hidden;
 }
 
@@ -26,25 +26,42 @@
     font-size: 3rem;
 }
 
-.conferenceView { 
+/* .conferenceView { 
     display: flex;  
     padding: 10px;
     gap: 10px;
     width: 70%;
     flex-wrap:wrap;
+} */
+ .conferenceView {
+  width: 70%;
+  display: grid;
+  gap: 10px;
+  padding: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-auto-rows: 1fr;
+  overflow: hidden; 
 }
 
-.conferenceView  video {
-    width: 48%;           /* ✅ FIX: no vw */
-    height: auto;         /* ✅ FIX: no vh */
+/* .conferenceView  video {
+    width: 48%;          
+    height: auto;        
     border-radius: 10px;
+} */
+.conferenceView video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  aspect-ratio: 16 / 9;
 }
+
 
 .chatRoom {
     position: absolute;
     height: 90vh;
     right: 0;
-    background: white;
+    background: rgb(183, 221, 221);
     border-radius: 10px;
     width: 30%;
     padding-inline: 20px;
@@ -62,6 +79,7 @@
 
 .chattingArea {
     position: absolute;
+    margin-bottom: 10px;
     bottom: 0;
        /* position: relative;   
     padding: 10px 0;
@@ -69,18 +87,56 @@
 }
 /* 👇 THIS FIXES OVERFLOW */
 .chattingDisplay {
-    flex: 1;                /* take remaining height */
-    overflow-y: auto;       /* enable scrolling */
+    flex: 1;               
+    overflow-y: auto;      
     padding-right: 5px;
 }
 
 /* keep input visible */
 .chattingArea {
-    position: relative;     /* ❌ remove absolute */
+    position: relative;     
     display: flex;
     gap: 10px;
     padding-top: 10px;
 }
+.lobby {
+    height: 100vh;
+    width: 100vw;
+    background-color: #020617;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: white;
+}
+
+/* Title */
+.lobby h2 {
+    margin-bottom: 10px;
+}
+
+/* Video preview */
+.lobby video {
+    width: 500px;
+    max-width: 90vw;
+    border-radius: 12px;
+    
+    margin-top: 10px;
+}
+
+/* Input width */
+.lobby .MuiTextField-root {
+    width: 280px;
+    
+    
+}
+
+/* Button */
+.lobby button {
+    width: 200px;
+}
+
 
 
 

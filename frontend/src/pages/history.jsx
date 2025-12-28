@@ -8,9 +8,12 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import HomeIcon from '@mui/icons-material/Home';
+import "../styles/history.css";
 
 import { IconButton } from '@mui/material';
+import { grey } from '@mui/material/colors';
 export default function History() {
+
 
 
     const { getHistoryOfUser } = useContext(AuthContext);
@@ -45,43 +48,47 @@ export default function History() {
     }
 
     return (
-        <div>
+        <div className="historyPage">
 
-            <IconButton onClick={() => {
+            <div className="historyHeader">
+            <IconButton  onClick={() => {
                 routeTo("/home")
             }}>
-                <HomeIcon />
+                <HomeIcon sx={{ color: "white", fontSize:"50px" }}/>
             </IconButton >
-            {
-                (meetings.length !== 0) ? meetings.map((e, i) => {
+            </div>
+
+            <div className="historyList">
+                {(meetings.length !== 0) ? meetings.map((e, i) => {
                     return (
 
                         <>
 
 
-                            <Card key={i} variant="outlined">
+                            <Card key={i} className="historyCard" >
 
 
                                 <CardContent>
-                                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                                        Code: {e.meetingCode}
-                                    </Typography>
+                                   <Typography className="historyText">
+                                     <strong>Code:</strong> {e.meetingCode}
+                                   </Typography>
 
-                                    <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                                        Date: {formatDate(e.date)}
-                                    </Typography>
-
-                                </CardContent>
-
+                                   <Typography className="historyText">
+                                     <strong>Date:</strong> {formatDate(e.date)}
+                                   </Typography>
+                                 </CardContent>
 
                             </Card>
 
 
                         </>
                     )
-                }) : <></>
+                }) :(
+      <p className="noHistory">No meetings found</p>
+    ) 
 
             }
+            </div>
 
         </div>
     )

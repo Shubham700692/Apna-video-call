@@ -1,0 +1,147 @@
+/* ---------- RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- NAVBAR ---------- */
+.navBar {
+  height: 64px;
+  background-color: #0f172a; /* dark blue-black */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.navBar h2 {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.navBar div:last-child {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navBar p {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.navBar button {
+  color: white;
+  border: 1px solid #334155;
+  padding: 6px 14px;
+  border-radius: 6px;
+  text-transform: none;
+}
+
+.navBar button:hover {
+  background-color: #1e293b;
+}
+
+/* ---------- MAIN CONTAINER ---------- */
+.meetContainer {
+  height: calc(100vh - 64px);
+  display: flex;
+  background-color:  #020617;
+  color: white;
+  padding: 40px;
+}
+
+/* ---------- LEFT PANEL ---------- */
+.leftPanel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.leftPanel > div {
+  max-width: 520px;
+}
+
+.leftPanel h2 {
+  font-size: 36px;
+  line-height: 1.3;
+  margin-bottom: 24px;
+  color: #e5e7eb;
+}
+
+/* Join input area */
+.leftPanel > div > div {
+  display: flex;
+  gap: 12px;
+}
+
+/* TextField styling (MUI safe) */
+/* .leftPanel :global(.MuiOutlinedInput-root) {
+  background-color: #020617;
+  border-radius: 8px;
+  color: white;
+}
+
+.leftPanel :global(.MuiOutlinedInput-input) {
+  color: white;
+}
+
+.leftPanel :global(.MuiInputLabel-root) {
+  color: #9ca3af;
+}
+
+.leftPanel :global(.MuiOutlinedInput-notchedOutline) {
+  border-color: #334155;
+}
+
+.leftPanel :global(.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline) {
+  border-color: #38bdf8;
+} */
+
+/* Join button */
+/* .leftPanel button {
+  background-color: #38bdf8;
+  color: #020617;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 10px 20px;
+}
+
+.leftPanel button:hover {
+  background-color: #0ea5e9;
+} */
+
+/* ---------- RIGHT PANEL ---------- */
+.rightPanel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rightPanel img {
+  width: 80%;
+  max-width: 420px;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.6));
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .meetContainer {
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  .rightPanel {
+    margin-top: 40px;
+  }
+
+  .leftPanel h2 {
+    font-size: 28px;
+  }
+}
